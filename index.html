@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook - K1 - M26.5 (Familia)</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+                <option value="20">20 minutos</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <h2 id="selected-level" class="level-title">Nivel: K1</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Asegúrate de tener listos todos los materiales indicados en la DIAPOSITIVA 1 antes de iniciar la misión.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Asegúrate de tener listos todos los materiales indicados en la Diapositiva 1 antes de iniciar la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: Bienvenida al Code Squad ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Dar la bienvenida a todos como miembros del Code Squad, presentando el enfoque del día.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+             <tr>
+                <td><strong>PASO 1 (0.2 minutos):</strong> Reproduce la Diapositiva 2 “Bienvenida” y saluda a todos como miembros del Code Squad.</td>
+                 <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Hola, Genios del CODE SQUAD! ¡Bienvenidos!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.3 minutos):</strong> Reproduce la Diapositiva 3 e Introduce el tema del día con el contexto de la historia.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Hoy vamos a visitar el mágico Museo de los Espejos y conocer a la gatita Iris, quien necesita su ayuda con una exhibición de máscaras gemelas."</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 3 (0.5 minutos):</strong> Reproduce la Diapositiva 4 “Presentación del Reto” e introduce el contexto de la actividad, y los materiales.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "En esta exhibición las máscaras se reflejan en espejos, y para que todo funcione, vamos a crear rutas simétricas, con fichas y usando la ficha de retorno para crear bucles. Nuestro compañero Dart nos ayudará a probar el código, ¡Manos a la obra!”"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('paper_programming')">
+        <div class="title">✍️ Actividad 2: Paper Programming ⏰ Tiempo: 4 minutos</div>
+        <div class="subtitle">Introducir el paper programming, mostrando la plantilla y los conceptos básicos.</div>
+    </div>
+    <div id="paper_programming" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la Diapositiva 5 “Plantilla Paper Programming” y explica cómo usar la plantilla.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Vamos a usar estas plantillas para planear el camino de Dart. Aquí dibujaremos los movimientos y usaremos las fichas de ruta para representar cada elemento del camino,  y recuerden usar la ficha de retorno para que los caminos se reflejen.  ¡Vean este ejemplo y comiencen a diseñar la magia!"</td>
+            </tr>
+            <tr>
+                 <td><strong>PASO 2 (2 minutos):</strong> Reproduce la Diapositiva 6. Entrega las plantillas y guía a los participantes a realizar el diseño del patrón simétrico.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Ahora, dibujen en sus hojas un camino simétrico como si fuera un espejo, asignen a cada ficha un color de máscara diferente y usen la ficha de retorno en los extremos.  ¡Dejen volar su imaginación y creen sus rutas mágicas!”</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('codificacion')">
+        <div class="title">🧱 Actividad 3: Codificación con Fichas ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Construir el patrón simétrico con fichas de ruta, usando la plantilla como guía.</div>
+    </div>
+    <div id="codificacion" class="content">
+        <table>
+            <tr>
+                 <td><strong>PASO 1 (3 minutos):</strong> Reproduce la Diapositiva 7. Guía a los participantes a colocar la ficha de retorno en los extremos de cada lado, creando el eje de simetría y los bucles.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Es hora de construir el camino! Coloquen una ficha de retorno al final de cada lado, ya que harán que Dart repita la ruta como un reflejo, y conectemos todas las fichas con cuidado para crear un código mágico.  ¡Manos a la obra, Code Squad!"</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (4 minutos):</strong> Explica cómo usar las plantillas de papel, para colocar las fichas y construir el camino.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "Utilicen su diseño en papel para guiar la colocación de las fichas y construir el camino de Dart. Recuerden que cada ficha representa una máscara y que la ficha de retorno es el espejo que repite la ruta.  ¡Vamos a programar un camino mágico lleno de reflejos!"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('ejecucion_dart')">
+        <div class="title">🎯 Actividad 4: Ejecución con Dart ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Colocar a Dart en el inicio del patrón y observar su recorrido.</div>
+    </div>
+    <div id="ejecucion_dart" class="content">
+        <table>
+             <tr>
+                 <td><strong>PASO 1 (2 minutos):</strong> Reproduce la Diapositiva 16, Presenta a Dart y colócalo al inicio del patrón para ejecutar el código.</td>
+                 <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Ha llegado el momento de la verdad! Coloquemos a Dart al inicio del camino mágico para ver si todo funciona.  ¡Observen cómo recorre la ruta que han creado y cómo la magia de los espejos se hace realidad!”</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (3 minutos):</strong> Reproduce la Diapositiva 17, Observa junto con los participantes cómo Dart sigue el recorrido y qué hace con la ficha de retorno.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> "¡Miren con atención, Genios del Código! Observen qué hace Dart cuando llega a las fichas de retorno. ¿Ven cómo repite el camino como si fuera un espejo? ¡Han creado un código que funciona de maravilla!”</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion_reflexion')">
+        <div class="title">🤔 Actividad 5: Reflexión y Cierre del Code Squad ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Reflexionar sobre lo aprendido y felicitar al Code Squad por su trabajo.</div>
+    </div>
+    <div id="conclusion_reflexion" class="content">
+        <table>
+            <tr>
+                 <td><strong>PASO 1 (5 minutos):</strong> Reproduce la Diapositiva 25, Realiza una reflexión sobre la actividad y el aprendizaje de los bucles y simetría.</td>
+                 <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                    "¡Lo lograron, Genios del CODE SQUAD! Gracias a su talento, las máscaras gemelas brillan de nuevo en el museo. ¿Cómo lograron que Dart creara caminos simétricos como un reflejo? ¿Qué hace la ficha de retorno? ¡Sigan trabajando en equipo y haciendo magia con sus códigos! ¡Son los mejores!”
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+               <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+        }
+    }
+
+    function updateContent() {
+        var time = document.getElementById("class-time").value;
+        var level = document.getElementById("class-level").value;
+        document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+        document.getElementById("selected-level").innerText = "Nivel: " + level;
+
+        var steps = {
+   "K1": {
+        "5.1": [
+            {
+                "step": 1,
+                "time": { "20": 1, "30": 1, "40": 1, "50": 1 },
+                 "accion":"Reproduce la DIAPOSITIVA 8 y explica cómo crear el código para resolver el reto",
+                "dialogo": "¡CODE SQUAD! Para ayudar a la gatita Iris, vamos a crear un código con fichas para que las máscaras reflejen su magia. Usaremos fichas de camino para representar cada máscara de color diferente: rojo, azul y amarillo, y al final de cada camino usaremos la ficha de retorno para que Dart repita el camino como en un espejo. ¡Decidan qué ficha usará cada máscara!"
+            },
+            {
+                "step": 2,
+                 "time": { "20": 1, "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 9 y distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo":"¡Aquí tienen sus hojas y colores! Dibujen las máscaras rojas, azules y amarillas y decidan qué ficha la representará.  ¡Vamos a empezar a crear los reflejos mágicos!”"
+            },
+             {
+                "step": 3,
+                 "time": { "20": 3, "30": 5, "40": 8, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 10 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo":"¡Excelente, equipo! Dibujen las máscaras de color y la ficha para representarlas: recta, esquina o curva. ¡Y recuerden la ficha de retorno al final de cada lado del camino para que Dart repita la ruta como un reflejo! ¡A crear magia!”"
+            }
+         ],
+        "6": [
+            {
+                "step": 1,
+                 "time": { "20": 1, "30": 2, "40": 2, "50": 2 },
+                "accion":"Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo":"¡CODE SQUAD, qué ingeniosos son!  Ahora vamos a intercambiar códigos para que la magia llegue a cada máscara en la exhibición. Yo recogeré sus hojas y las daré a otro equipo. ¡Prepárense para un reto de reflejos!"
+            },
+             {
+                "step": 2,
+                "time": { "20": 4, "30": 7, "40": 10, "50": 10 },
+                "accion":"Reproduce la DIAPOSITIVA 18 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo":"¡Es hora de construir, Genios! Sigan el código que recibieron y coloquen las fichas para cada máscara:  las rectas, las esquinas y las curvas, recuerden la ficha de retorno al final, para que Dart siga los caminos como un reflejo. ¡Vamos a iluminar el museo!”"
+            }
+          ],
+        "7": [
+            {
+                 "step": 1,
+                 "time": { "20": 1, "30": 3, "40": 4, "50": 5 },
+                "accion":"Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                "dialogo":"¡CODE SQUAD, alerta en el museo! Unos duendes traviesos movieron las fichas y desordenaron los reflejos de las máscaras.  Pero el cuartel general nos ha enviado un código mágico para que todo funcione correctamente. ¡Vamos a resolver este problema juntos!”"
+            },
+             {
+                 "step": 2,
+                "time": { "20": 4, "30": 7, "40": 10, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 22 “Código de Rescate K1” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                "dialogo":"¡Genios! ¡Aquí tienen el código de rescate!  Usen las fichas con mucho cuidado, recta, esquina y curva, para cada máscara de color y la ficha de retorno para repetir el camino. ¡Vamos a guiar a Dart y a iluminar el museo con su magia!”"
+            }
+          ]
+    },
+   "K2": {
+        "5.2": [
+             {
+                 "step": 1,
+                 "time": { "20": 1, "30": 1, "40": 1, "50": 1 },
+                "accion":"Reproduce la DIAPOSITIVA 11 y explica cómo crear el código para resolver el reto.",
+                "dialogo":"¡CODE SQUAD! Vamos a crear un código más avanzado para que los reflejos brillen de nuevo. Usaremos fichas para representar las máscaras de color rojo, azul, amarilla y verde. La ficha recta para la máscara roja, la de esquina para la azul, la de curva simple para la amarilla y la doble curva para la verde. No olviden la ficha de retorno para repetir el reflejo. ¡Sean creativos!”"
+            },
+             {
+                "step": 2,
+                "time": { "20": 1, "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 12, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo":"¡Aquí tienen sus hojas y colores, genios!  Dibujen las máscaras rojas, azules, amarillas y verdes y  elijan la ficha que la representará en el código.  ¡Prepárense para crear un camino lleno de magia!”"
+             },
+            {
+                 "step": 3,
+                 "time": { "20": 3, "30": 5, "40": 8, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 13 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y asignan fichas de ruta.",
+                "dialogo":"¡Excelente equipo! Dibujen cada máscara y elijan la ficha que la represente. Recuerden usar la ficha de retorno al final de cada lado para que Dart repita la ruta.  ¡Vamos a crear la magia de los reflejos juntos!”"
+             }
+         ],
+        "6": [
+            {
+                 "step": 1,
+                 "time": { "20": 1, "30": 2, "40": 2, "50": 2 },
+                "accion":"Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                 "dialogo":"¡CODE SQUAD! ¡Sus códigos son grandiosos! Para que las máscaras reflejen su magia por todo el museo, vamos a intercambiar sus creaciones. ¡Yo recogeré sus diseños y se los daré a otro equipo.  Vamos a poner a prueba su creatividad!”"
+            },
+            {
+                 "step": 2,
+                 "time": { "20": 4, "30": 7, "40": 10, "50": 10 },
+                "accion":"Reproduce la DIAPOSITIVA 19 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo":"¡Es hora de construir, Genios! Usen el código que recibieron para guiar a Dart.  Coloquen las fichas: rectas, esquinas y curvas simples para las máscaras roja, azul, amarilla y verde, y recuerden la ficha de retorno en cada extremo, para que la magia se repita.  ¡Vamos a crear un camino lleno de reflejos mágicos!”"
+            }
+        ],
+        "7": [
+             {
+                 "step": 1,
+                 "time": { "20": 1, "30": 3, "40": 4, "50": 5 },
+                "accion":"Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                 "dialogo":"¡CODE SQUAD! ¡Alerta en el museo! Los fantasmas traviesos han vuelto y han desordenado las fichas, ¡Oh, no! Pero no se preocupen, el cuartel general nos ha enviado un código de rescate para que los reflejos vuelvan a funcionar. ¡Vamos a usar nuestras habilidades y a salvar la magia del museo!”"
+            },
+            {
+                 "step": 2,
+                 "time": { "20": 4, "30": 7, "40": 10, "50": 10 },
+                "accion":"Reproduce la DIAPOSITIVA 23 “Código de Rescate K2” y motiva a los Genios que sigan el nuevo código proyectado en la pantalla.",
+                 "dialogo":"¡Genios! Aquí está el código de rescate para las máscaras. Usen las fichas para guiar a Dart, recordando que cada ficha representa una máscara de diferente color: roja, azul, amarilla y verde. Usen también la ficha de retorno al final de cada lado, para que la magia se repita como un espejo, ¡Vamos a crear un camino lleno de reflejos mágicos!”"
+            }
+         ]
+    },
+    "K3": {
+        "5.3": [
+            {
+                 "step": 1,
+                 "time": { "20": 1, "30": 1, "40": 1, "50": 1 },
+                 "accion":"Reproduce la DIAPOSITIVA 14 y explica cómo crear el código para resolver el reto.",
+                 "dialogo":"¡CODE SQUAD! Crearemos un código más complejo, usando fichas para representar las máscaras rojas, azules, amarillas, verdes y naranjas.  Las rectas para la roja, las esquinas para la azul, las curvas simples para la amarilla, las de doble curva para la verde y las de retorno para los bucles. ¡Vamos a crear una ruta increíble!”"
+             },
+            {
+                 "step": 2,
+                 "time": { "20": 1, "30": 2, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 15, distribuye los materiales y asegúrate de que todos tengan lo necesario.",
+                "dialogo":"¡Aquí tienen sus hojas y colores! Dibujen las máscaras rojas, azules, amarillas, verdes y naranjas y asignen las fichas que las representarán. ¡Vamos a usar su creatividad para guiar a Dart por este camino lleno de espejos!”"
+            },
+            {
+                 "step": 3,
+                 "time": { "20": 3, "30": 5, "40": 8, "50": 10 },
+                 "accion":"Reproduce la DIAPOSITIVA 16 y supervisa la creación del código en pares. Ayuda a los equipos mientras dibujan y fichas de ruta.",
+                "dialogo":"¡Excelente, equipo! Dibujen cada máscara con mucho cuidado y asignen la ficha que la represente: recta, esquina, curva simple o curva doble, y recuerden usar las fichas de retorno al final para que el camino se repita como en un espejo. ¡Vamos a demostrar cómo funciona la magia de la programación!”"
+             }
+        ],
+        "6": [
+           {
+                 "step": 1,
+                 "time": { "20": 1, "30": 1, "40": 2, "50": 2 },
+                 "accion":"Reproduce la DIAPOSITIVA 17 y dirige a los Genios para que intercambien los códigos que hicieron.",
+                "dialogo":"¡Genios del Code Squad! Sus códigos son asombrosos.  Intercambiemos nuestros diseños para que Dart recorra diferentes caminos llenos de magia.  Yo recogeré sus hojas y se las daré a otro equipo, ¡prepárense para un nuevo reto!”"
+            },
+            {
+                 "step": 2,
+                 "time": { "20": 4, "30": 7, "40": 10, "50": 10 },
+                "accion":"Reproduce la DIAPOSITIVA 20 y distribuye los códigos asignados para que cada equipo comience a construir.",
+                "dialogo":"¡Es hora de construir, Genios! Usen sus plantillas y coloquen las fichas para guiar a Dart, siguiendo la ficha correcta para las máscaras rojas, azules, amarillas, verdes y naranjas.  Y no olviden las fichas de retorno en cada extremo, para crear el efecto de espejo.  ¡Vamos a poner a prueba su código!”"
+             }
+          ],
+        "7": [
+           {
+                "step": 1,
+                 "time": { "20": 1, "30": 3, "40": 4, "50": 5 },
+                "accion":"Reproduce la DIAPOSITIVA 21 y explica el obstáculo a los Genios.",
+                 "dialogo":"¡CODE SQUAD, atención! Unos fantasmas movieron las fichas y ahora los reflejos se desordenaron por todo el museo.  ¡Pero no se preocupen, el cuartel general nos envió un código mágico para resolver este problema!  ¡Vamos a trabajar en equipo y a demostrar que su código es el mejor!”"
+            },
+            {
+                 "step": 2,
+                 "time": { "20": 4, "30": 7, "40": 10, "50": 10 },
+                "accion":"Reproduce la DIAPOSITIVA 24 y motiva a los Genios a construir el nuevo código con bloques siguiendo el patrón proyectado.",
+                 "dialogo":"¡Genios del CODE SQUAD! Aquí tienen el código de rescate. Utilicen las fichas de ruta para representar las máscaras de diferentes colores: roja, azul, amarilla, verde y naranja. Y usen la ficha de retorno para que la magia de los espejos se repita sin fin.  ¡Sigan el código con cuidado y vuelvan a hacer brillar el museo!”"
+            }
+          ]
+    }
+};
+
+
+
+        // Mostrar u ocultar actividades según el nivel seleccionado
+        var activities = {
+            "activity-0": true,
+            "activity-1": true,
+            "activity-2": true,
+            "activity-3": true,
+            "activity-4": true,
+             "activity-5": true
+        };
+
+        Object.keys(activities).forEach(function(activityId) {
+            var activityElement = document.getElementById(activityId);
+            if (activities[activityId]) {
+                activityElement.style.display = "block";
+            } else {
+                activityElement.style.display = "none";
+            }
+        });
+
+        // Renderizar los pasos dinámicamente en las tablas de actividades 5, 6 y 7
+        renderActivitySteps("activity-5-content", steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time);
+        renderActivitySteps("activity-6-content", steps[level]["6"], time);
+        renderActivitySteps("activity-7-content", steps[level]["7"], time);
+
+        document.getElementById("activity-5-total-time").innerText = calculateTotalTime(steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time) + " minutos";
+        document.getElementById("activity-6-total-time").innerText = calculateTotalTime(steps[level]["6"], time) + " minutos";
+         document.getElementById("activity-7-total-time").innerText = calculateTotalTime(steps[level]["7"], time) + " minutos";
+    }
+
+    function renderActivitySteps(contentId, steps, time) {
+        var contentContainer = document.getElementById(contentId);
+        contentContainer.innerHTML = "";
+        steps.forEach(function(step) {
+            if (step.time[time] > 0) {
+                var row = document.createElement("tr");
+                var stepCell = document.createElement("td");
+                var dialogCell = document.createElement("td");
+
+                stepCell.innerHTML = "<strong>PASO " + step.step + " (" + step.time[time] + " minutos):</strong> " + step.accion;
+                dialogCell.innerHTML = "<strong>DIÁLOGO SUGERIDO:</strong> " + step.dialogo;
+
+                row.appendChild(stepCell);
+                row.appendChild(dialogCell);
+                contentContainer.appendChild(row);
+            }
+        });
+    }
+
+    function calculateTotalTime(steps, time) {
+        return steps.reduce((total, step) => total + (step.time[time] || 0), 0);
+    }
+    updateContent();
+</script>
